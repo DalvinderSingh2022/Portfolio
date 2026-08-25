@@ -1,0 +1,10 @@
+# Netlify deployment config — matches your other Netlify-hosted projects.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback (single-page app has one entry point)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

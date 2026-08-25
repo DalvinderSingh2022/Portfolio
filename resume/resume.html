@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dalvinder Singh — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14181f;
+      --muted: #5b6472;
+      --soft: #7a8494;
+      --line: #e3e7ee;
+      --accent: #0891b2;
+      /* cyan-700, print-safe */
+      --accent-2: #7c3aed;
+      /* violet-600 */
+      --band: linear-gradient(120deg, #0891b2, #7c3aed);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--ink);
+      background: #f4f6f9;
+      font-size: 10.5px;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+      padding: 13mm 14mm 12mm;
+      position: relative;
+    }
+
+    /* ---- Header ---- */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--line);
+      margin-bottom: 14px;
+    }
+
+    .photo {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--accent);
+      background: var(--band);
+    }
+
+    .photo-fallback {
+      width: 74px;
+      height: 74px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: var(--band);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .head-main {
+      flex: 1;
+    }
+
+    h1 {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.4px;
+      line-height: 1.1;
+    }
+
+    .role {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .contact {
+      margin-top: 7px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 14px;
+      font-size: 9.7px;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .contact span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .dot {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ---- Sections ---- */
+    section {
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    h2::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      border-radius: 2px;
+    }
+
+    .summary {
+      color: #2b3340;
+      font-size: 10.4px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 22px;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 8px;
+      font-size: 10px;
+    }
+
+    .skill-label {
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+      min-width: 74px;
+    }
+
+    .skill-val {
+      color: var(--muted);
+    }
+
+    /* Experience & projects */
+    .item {
+      margin-bottom: 10px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .item-title {
+      font-weight: 700;
+      font-size: 11px;
+      color: var(--ink);
+    }
+
+    .item-title .at {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .item-meta {
+      font-size: 9.3px;
+      color: var(--soft);
+      white-space: nowrap;
+      font-weight: 600;
+    }
+
+    .item-sub {
+      font-size: 9.4px;
+      color: var(--accent-2);
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    ul.bullets {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    ul.bullets li {
+      position: relative;
+      padding-left: 13px;
+      margin-bottom: 2.5px;
+      color: #333c48;
+      font-size: 10px;
+    }
+
+    ul.bullets li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .links {
+      font-size: 9.2px;
+      color: var(--soft);
+      font-weight: 600;
+    }
+
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Two-column lower area */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 22px;
+    }
+
+    .edu-item {
+      margin-bottom: 8px;
+    }
+
+    .edu-item .item-title {
+      font-size: 10.4px;
+    }
+
+    .edu-school {
+      font-size: 9.6px;
+      color: var(--muted);
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(8, 145, 178, 0.1);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 9px;
+      padding: 1px 7px;
+      border-radius: 20px;
+      margin-top: 2px;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .page {
+        margin: 0;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <img class="photo" src="../public/profile.jpg" alt="Dalvinder Singh"
+        onerror="this.outerHTML='<div class=&quot;photo-fallback&quot;>DS</div>'" />
+      <div class="head-main">
+        <h1>Dalvinder Singh</h1>
+        <div class="role">Full Stack Developer — MERN Stack</div>
+        <div class="contact">
+          <span>📍 New Delhi, India</span>
+          <span class="dot">·</span>
+          <span>✉ dalvindersingh201999@gmail.com</span>
+          <span class="dot">·</span>
+          <span>☎ +91 8447421200</span>
+          <br />
+          <span><a href="https://www.linkedin.com/in/dalvindersingh2019/">linkedin.com/in/dalvindersingh2019</a></span>
+          <span class="dot">·</span>
+          <span><a href="https://github.com/DalvinderSingh2022">github.com/DalvinderSingh2022</a></span>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p class="summary">
+        Full Stack Developer with 1.5+ years of experience building scalable,
+        real-time web applications across the MERN stack. Skilled at
+        architecting responsive React front-ends, engineering WebSocket-powered
+        features, and securing REST APIs with JWT. B.Tech in Computer Science
+        (9.2/10 CGPA) with a strong Data Structures &amp; Algorithms foundation.
+        Focused on clean code, performance, and shipping polished user experiences.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-row">
+          <span class="skill-label">Languages</span>
+          <span class="skill-val">C++, JavaScript (ES6+), HTML5, CSS3</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Frontend</span>
+          <span class="skill-val">React.js, Redux, Tailwind CSS, Responsive UI</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Backend</span>
+          <span class="skill-val">Node.js, Express.js, MongoDB, REST APIs</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Real-time / Auth</span>
+          <span class="skill-val">Socket.io (WebSockets), JWT</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Tools</span>
+          <span class="skill-val">Git, GitHub, Agile / Scrum</span>
+        </div>
+        <div class="skill-row">
+          <span class="skill-label">Concepts</span>
+          <span class="skill-val">Data Structures &amp; Algorithms, OOP</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Full Stack Developer <span class="at">· Odisoft Technology</span></div>
+          <div class="item-meta">Feb 2025 – Present · New Delhi</div>
+        </div>
+        <ul class="bullets">
+          <li>Architect and build front-end features for high-priority web and mobile applications in React, delivering
+            responsive UIs across devices.</li>
+          <li>Improved application load times and rendering performance for a smoother, more consistent user experience.
+          </li>
+          <li>Collaborate within an Agile team, moving across project phases to meet critical deadlines and evolving
+            requirements.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Web Developer Intern <span class="at">· Hirers.co.in</span></div>
+          <div class="item-meta">Jan 2024 – Feb 2024</div>
+        </div>
+        <ul class="bullets">
+          <li>Led a front-end redesign that significantly enhanced the product's visual appeal and overall user
+            experience.</li>
+          <li>Engineered responsive layouts with modern CSS, achieving 100% cross-device compatibility.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Draw n Guess</div>
+          <div class="links"><a href="https://drawnguessds.netlify.app/">Live</a> · <a
+              href="https://github.com/DalvinderSingh2022/Draw-n-Guess">Code</a></div>
+        </div>
+        <div class="item-sub">React · Node.js · Express · Socket.io</div>
+        <ul class="bullets">
+          <li>Built a real-time, multiplayer drawing-and-guessing game with a synchronized canvas and live chat over
+            WebSockets.</li>
+          <li>Engineered low-latency state sync so every player sees strokes and guesses instantly.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">Real-Time Task Manager</div>
+          <div class="links"><a href="https://taskmanagerrt.netlify.app">Live</a> · <a
+              href="https://github.com/DalvinderSingh2022/Real-Time-Task-Management">Code</a></div>
+        </div>
+        <div class="item-sub">MongoDB · Express · React · Node.js · JWT · WebSockets</div>
+        <ul class="bullets">
+          <li>Developed a full MERN task-management app with JWT-secured routes and real-time status sync across
+            clients.</li>
+          <li>Implemented protected auth flows and instant task updates with no page reloads.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">GitHub Profile Viewer</div>
+          <div class="links"><a href="https://githubprofileds.netlify.app/">Live</a> · <a
+              href="https://github.com/DalvinderSingh2022/GitHub-Profile">Code</a></div>
+        </div>
+        <div class="item-sub">JavaScript · GitHub REST API</div>
+        <ul class="bullets">
+          <li>Created a tool to fetch and visualize any developer's GitHub stats and repositories via the REST API.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <section>
+        <h2>Education</h2>
+        <div class="edu-item">
+          <div class="item-title">B.Tech, Computer Science</div>
+          <div class="edu-school">Guru Tegh Bahadur Institute of Technology · 2021–2025</div>
+          <div class="badge">CGPA 9.2 / 10</div>
+        </div>
+        <div class="edu-item">
+          <div class="item-title">Senior Secondary (XII), CBSE</div>
+          <div class="edu-school">2021</div>
+          <div class="badge">83.66%</div>
+        </div>
+      </section>
+      <section>
+        <h2>Highlights</h2>
+        <ul class="bullets">
+          <li>17+ web projects shipped and deployed to production.</li>
+          <li>Hands-on with real-time systems using Socket.io &amp; WebSockets.</li>
+          <li>Strong DSA foundation in C++ and JavaScript.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
