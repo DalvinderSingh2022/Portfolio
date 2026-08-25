@@ -6,7 +6,7 @@ export const profile = {
   role: "Full Stack Developer",
   tagline: "MERN Stack · Real-time Web Apps",
   location: "New Delhi, India",
-  avatar: "/profile.jpg",
+  avatar: "/profile.jpeg",
   email: "dalvindersingh201999@gmail.com",
   phone: "+91 8447421200",
   resume: "/Dalvinder_Singh_Resume.pdf",
