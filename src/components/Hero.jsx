@@ -75,7 +75,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 rounded-xl border border-line bg-ink-850/60 px-5 py-3 font-semibold text-white backdrop-blur transition-colors hover:border-accent/50 hover:bg-ink-800"
             >
               <DownloadIcon width={18} height={18} />
-              Résumé
+              Resume
             </a>
           </div>
 

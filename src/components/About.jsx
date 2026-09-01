@@ -16,7 +16,13 @@ export default function About() {
           <p>
             Currently I'm a{" "}
             <span className="font-semibold text-white">
-              Full Stack Developer at Odisoft Technology
+              Full Stack Developer at{" "}
+              <a
+                href="https://www.linkedin.com/company/odisoft-technology-pvt-ltd"
+                className="underline decoration-accent hover:translate-2"
+              >
+                Odisoft Technology
+              </a>
             </span>
             , where I architect front-end features in React and push for fast,
             consistent experiences across devices. I care about clean code,

@@ -4,7 +4,7 @@
 export const profile = {
   name: "Dalvinder Singh",
   role: "Full Stack Developer",
-  tagline: "MERN Stack · Real-time Web Apps",
+  tagline: "Full Stack Developer · MERN Web Apps",
   location: "New Delhi, India",
   avatar: "/profile.jpeg",
   email: "dalvindersingh201999@gmail.com",
@@ -14,7 +14,7 @@ export const profile = {
     "Computer Science graduate and Full Stack Developer with a strong foundation in building scalable, user-focused web applications. I work across the MERN stack — turning ideas into responsive, real-time products — and I love sharpening my problem-solving through Data Structures & Algorithms.",
   roles: [
     "Full Stack Developer",
-    "React Engineer",
+    "Software Engineer",
     "MERN Developer",
     "Problem Solver",
   ],
@@ -28,7 +28,7 @@ export const socials = {
 
 export const stats = [
   { value: "9.2", label: "CGPA / 10" },
-  { value: "17+", label: "Projects Shipped" },
+  { value: "15+", label: "Projects Shipped" },
   { value: "1.5+", label: "Years Building" },
 ];
 
@@ -39,7 +39,7 @@ export const skills = [
   },
   {
     group: "Frontend",
-    items: ["React.js", "Redux", "Tailwind CSS", "Responsive UI"],
+    items: ["React.js", "Redux", "React Native", "Tailwind CSS", "Responsive UI"],
   },
   {
     group: "Backend",
@@ -47,7 +47,7 @@ export const skills = [
   },
   {
     group: "Core & Tools",
-    items: ["Git", "Data Structures & Algorithms", "OOP", "Agile"],
+    items: ["Git", "Data Structures & Algorithms", "OOPs", "Agile"],
   },
 ];
 
