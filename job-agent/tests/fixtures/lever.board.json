@@ -1,0 +1,42 @@
+[
+  {
+    "id": "aaaa1111-2222-3333-4444-555566667777",
+    "text": "React Developer",
+    "createdAt": 1756700000000,
+    "hostedUrl": "https://jobs.lever.co/leverdemo/aaaa1111-2222-3333-4444-555566667777",
+    "applyUrl": "https://jobs.lever.co/leverdemo/aaaa1111-2222-3333-4444-555566667777/apply",
+    "workplaceType": "remote",
+    "country": "IN",
+    "descriptionPlain": "Join us to build modern web apps with React and TypeScript.",
+    "additionalPlain": "We value accessibility and clean code.",
+    "categories": {
+      "commitment": "Full Time",
+      "department": "Engineering",
+      "team": "Frontend",
+      "location": "Remote",
+      "allLocations": ["Remote"]
+    },
+    "lists": [
+      { "text": "Responsibilities", "content": "<li>Build UI components</li><li>Integrate REST APIs</li>" },
+      { "text": "Requirements", "content": "<li>2+ years React</li><li>TypeScript &amp; Next.js</li>" }
+    ]
+  },
+  {
+    "id": "bbbb1111-2222-3333-4444-555566667777",
+    "text": "Sales Development Representative",
+    "createdAt": 1756600000000,
+    "hostedUrl": "https://jobs.lever.co/leverdemo/bbbb1111-2222-3333-4444-555566667777",
+    "applyUrl": "https://jobs.lever.co/leverdemo/bbbb1111-2222-3333-4444-555566667777/apply",
+    "workplaceType": "on-site",
+    "country": "US",
+    "descriptionPlain": "Generate pipeline and qualify leads.",
+    "categories": {
+      "commitment": "Full Time",
+      "department": "Sales",
+      "team": "SDR",
+      "location": "San Francisco, CA",
+      "allLocations": ["San Francisco, CA"]
+    },
+    "lists": []
+  }
+]

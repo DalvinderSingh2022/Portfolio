@@ -1,0 +1,138 @@
+// Prisma schema for the Job Discovery & Matching Agent.
+// Run `npm run db:migrate` (needs a reachable DATABASE_URL) to apply it.
+// The app also works with an in-memory store when DATABASE_URL is empty.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ApplicationStatus {
+  discovered
+  reviewing
+  shortlisted
+  rejected
+  applied
+  interview
+  offer
+  closed
+}
+
+model CandidateProfile {
+  id        String   @id @default(cuid())
+  version   Int      @default(1)
+  name      String
+  data      Json // full validated profile snapshot
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Job {
+  id                String            @id
+  fingerprint       String            @unique
+  primarySource     String
+  externalId        String?
+  title             String
+  company           String
+  location          String?
+  remoteType        String            @default("unknown")
+  employmentType    String?
+  experienceRequired String?
+  salaryMin         Int?
+  salaryMax         Int?
+  salaryCurrency    String?
+  description       String            @db.Text
+  applicationUrl    String
+  sourceUrl         String
+  postedAt          DateTime?
+  firstSeenAt       DateTime          @default(now())
+  lastSeenAt        DateTime          @default(now())
+  active            Boolean           @default(true)
+  applicationStatus ApplicationStatus @default(discovered)
+  matchScore        Int?
+  recommendation    String?
+  // Full StoredJob snapshot for lossless hydration.
+  data              Json
+
+  sources JobSourceSighting[]
+  skills  JobSkill[]
+  matches JobMatch[]
+
+  @@index([matchScore])
+  @@index([company])
+  @@index([active])
+  @@index([applicationStatus])
+}
+
+/// One row per (job, source) sighting — preserves every platform a job was seen on.
+model JobSourceSighting {
+  id         String   @id @default(cuid())
+  jobId      String
+  source     String
+  externalId String?
+  url        String?
+  seenAt     DateTime @default(now())
+  job        Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([jobId, source])
+  @@index([source])
+}
+
+model JobSkill {
+  id     String @id @default(cuid())
+  jobId  String
+  skill  String
+  job    Job    @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([jobId, skill])
+  @@index([skill])
+}
+
+model JobMatch {
+  id             String   @id @default(cuid())
+  jobId          String
+  finalScore     Int
+  recommendation String
+  method         String
+  // Individual dimension scores + weights + rule details + optional llm verdict.
+  scores         Json
+  weights        Json
+  details        Json
+  llm            Json?
+  profileVersion Int      @default(1)
+  evaluatedAt    DateTime @default(now())
+  job            Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@unique([jobId, profileVersion])
+  @@index([finalScore])
+}
+
+model SearchRun {
+  id              String    @id @default(cuid())
+  startedAt       DateTime  @default(now())
+  completedAt     DateTime?
+  sources         String[]
+  queries         String[]
+  jobsFound       Int       @default(0)
+  jobsNew         Int       @default(0)
+  jobsDuplicate   Int       @default(0)
+  jobsRejected    Int       @default(0)
+  jobsShortlisted Int       @default(0)
+  errors          Json      @default("[]")
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  jobId     String
+  channel   String
+  score     Int
+  title     String
+  company   String
+  createdAt DateTime @default(now())
+
+  @@index([jobId])
+}

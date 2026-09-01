@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "name": "Dalvinder Singh",
+  "location": "New Delhi, India",
+  "experienceYears": 2,
+  "education": {
+    "degree": "B.Tech Computer Science"
+  },
+  "skills": [
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "PostgreSQL",
+    "REST APIs",
+    "Tailwind CSS",
+    "Git"
+  ],
+  "preferredRoles": [
+    "Frontend Developer",
+    "Frontend Engineer",
+    "React Developer",
+    "Full Stack Developer",
+    "Software Engineer"
+  ],
+  "preferredLocations": [
+    "Remote",
+    "India",
+    "New Delhi",
+    "Bangalore",
+    "Hyderabad",
+    "Gurgaon"
+  ],
+  "employmentTypes": ["Full-time", "Internship"],
+  "salaryExpectation": {
+    "min": 600000,
+    "currency": "INR"
+  },
+  "minimumMatchScore": 70
+}

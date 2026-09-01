@@ -1,0 +1,21 @@
+{
+  "queries": [
+    "Frontend Developer",
+    "React Developer",
+    "Frontend Engineer",
+    "Software Engineer",
+    "Full Stack Developer"
+  ],
+  "locations": ["Remote", "India", "New Delhi", "Bangalore", "Gurgaon"],
+  "experience": {
+    "minYears": 0,
+    "maxYears": 3
+  },
+  "jobTypes": ["full-time", "internship"],
+  "resultsPerQuery": 25,
+  "perSource": {
+    "linkedin": {
+      "queries": ["React Developer", "Frontend Engineer"]
+    }
+  }
+}

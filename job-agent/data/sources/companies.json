@@ -1,0 +1,8 @@
+{
+  "_comment": "Public ATS job boards to pull from when the company-careers source is enabled (ENABLE_COMPANY_CAREERS=true). These are public, documented endpoints (Greenhouse boards-api / Lever postings-api) intended for programmatic access. Add your own target companies here; set enabled=false to skip one without deleting it.",
+  "companies": [
+    { "name": "GitLab", "ats": "greenhouse", "board": "gitlab", "enabled": true },
+    { "name": "Figma", "ats": "greenhouse", "board": "figma", "enabled": true },
+    { "name": "Lever Demo", "ats": "lever", "board": "leverdemo", "enabled": true }
+  ]
+}

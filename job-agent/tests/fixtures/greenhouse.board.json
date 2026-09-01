@@ -1,0 +1,28 @@
+{
+  "jobs": [
+    {
+      "id": 5364702001,
+      "title": "Senior Frontend Engineer, React (Remote)",
+      "updated_at": "2026-08-20T05:37:08-04:00",
+      "first_published": "2026-08-18T09:00:00-04:00",
+      "absolute_url": "https://boards.greenhouse.io/acme/jobs/5364702001",
+      "location": { "name": "Remote - India" },
+      "company_name": "Acme (GH)",
+      "departments": [{ "name": "Engineering" }],
+      "offices": [{ "name": "Remote" }],
+      "content": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;We are hiring a &lt;strong&gt;Frontend Engineer&lt;/strong&gt; to build with React, TypeScript &amp; Next.js.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;3+ years with React&lt;/li&gt;&lt;li&gt;Strong TypeScript&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;"
+    },
+    {
+      "id": 5364702002,
+      "title": "Account Executive, Enterprise",
+      "updated_at": "2026-08-19T05:37:08-04:00",
+      "absolute_url": "https://boards.greenhouse.io/acme/jobs/5364702002",
+      "location": { "name": "New York, USA" },
+      "company_name": "Acme (GH)",
+      "departments": [{ "name": "Sales" }],
+      "offices": [{ "name": "New York, US" }],
+      "content": "&lt;p&gt;Own a book of enterprise accounts and close deals.&lt;/p&gt;"
+    }
+  ],
+  "meta": { "total": 2 }
+}
